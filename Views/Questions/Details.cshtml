@@ -1,0 +1,60 @@
+﻿@model QuizApp.Models.Question
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Question</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QusetionRead)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QusetionRead)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ChoiceA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChoiceA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ChoiceB)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChoiceB)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ChoiceC)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChoiceC)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ChoiceD)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChoiceD)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CorrectAnswer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CorrectAnswer)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quiz)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quiz.QuizID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.QuestionID">Edit</a> |
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+</div>

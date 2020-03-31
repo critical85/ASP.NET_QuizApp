@@ -1,0 +1,50 @@
+﻿@model QuizApp.Models.Quiz
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Quiz: @Html.DisplayFor(t => t.Title)</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4">
+            Description:
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-4">
+            Number of questions:
+        </dt>
+        <dd class="col-sm-6">
+            @if (Model.Questions != null)
+            {
+                @Model.Questions.Count
+            }
+            else
+            {
+                <p>0</p>
+            }
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-4">
+            List of questions:
+        </dt>
+        <dd class="col-sm-6">
+            @if (Model.Questions != null)
+            {
+                @foreach (var question in Model.Questions)
+                {
+                    @question.QusetionRead
+                    <br />
+                }
+            }
+            </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.QuizID">Edit</a> |
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+</div>

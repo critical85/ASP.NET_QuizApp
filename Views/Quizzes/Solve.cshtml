@@ -1,0 +1,67 @@
+﻿@model QuizApp.Models.Question
+@using Microsoft.AspNetCore.Http
+
+@{
+    ViewData["Title"] = "Solve";
+}
+
+<div>
+    <h4>Quiz: @ViewData["QuizTitle"]</h4>
+    <hr />
+
+    <form asp-action="Solve">
+        <div class="row">
+            <div class="col-sm-2">
+                Question:
+            </div>
+            <div class="col-sm-3">
+                @Model.QusetionRead
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-check col-sm-2">
+                <input class="form-check-input" type="radio" name="answer" value="A">A:
+            </div>
+            <div class="col-sm-3">
+                @Model.ChoiceA
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-check col-sm-2">
+                <input class="form-check-input" type="radio" name="answer" value="B">B:
+            </div>
+            <div class="col-sm-3">
+                @Model.ChoiceB
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-check col-sm-2">
+                <input class="form-check-input" type="radio" name="answer" value="C">C:
+            </div>
+            <div class="col-sm-3">
+                @Model.ChoiceC
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-check col-sm-2">
+                <input class="form-check-input" type="radio" name="answer" value="D">D:
+            </div>
+            <div class="col-sm-3">
+                @Model.ChoiceD
+            </div>
+        </div>
+        @if ((string)ViewData["LastQuestion"] == "true")
+        {
+            <input type="submit" value="Finish" class="btn btn-primary" />
+        }
+        else
+        {
+            <input type="submit" value="Next" class="btn btn-primary" />
+        }
+
+
+    </form>
+
+
+</div>
+

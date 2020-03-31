@@ -1,0 +1,19 @@
+﻿@model QuizApp.ViewModels.QuizResult
+@{
+    ViewData["Title"] = "Summary";
+}
+
+<h4>Summary</h4>
+
+@foreach (var item in Model.QuestionResults)
+{
+    if (item == 1)
+    {
+        <p> Answer was CORRECT</p>
+    }
+    else
+    {
+        <p> Answer was INCORRECT</p>
+    }
+}
+
